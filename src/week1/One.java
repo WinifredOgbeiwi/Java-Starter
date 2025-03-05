@@ -1,9 +1,6 @@
-import java.text.MessageFormat;
-import java.time.LocalDate;
-import java.time.Year;
-import java.util.Date;
+package week1;
 
-public class Main {
+public class One {
     public static void main(String[] args) {
         System.out.println("Hello Vistula");
 
