@@ -10,6 +10,7 @@ public class WeightOnMars {
     }
     public static void CalculateMarsWeight(float earthWeightOgbeiwi){
         marsWeightOgbeiwi = earthWeightOgbeiwi * gravityonMars;
+
 //        initial result
         System.out.println(MessageFormat.format("{0}Kg on Earth is {1}Kg on Mars", earthWeightOgbeiwi, marsWeightOgbeiwi));
 
