@@ -6,16 +6,14 @@ import java.text.MessageFormat;
 
 public class TaxCalculation {
     public static void main(String[] args) {
-        final double VAT_RATE = 1.23;
-        final int QUANTITY = 10_000;
-
+         double VAT_RATE = 1.23;
         double priceWithoutVat = 9.99;
         System.out.println(MessageFormat.format("Price without VAT: {0}", priceWithoutVat));
 
         double priceWithVat = priceWithoutVat * VAT_RATE;
         System.out.println(MessageFormat.format("Price with VAT: {0}", priceWithVat));
 
-        double valueWithVat = priceWithVat * QUANTITY;
+        double valueWithVat = priceWithVat * 10000;
         System.out.println(MessageFormat.format("10,000 pcs of product with VAT: {0}", valueWithVat));
 
         double valueWithoutVat = valueWithVat / VAT_RATE;
@@ -32,7 +30,7 @@ public class TaxCalculation {
         bdPriceWithVat = bdPriceWithVat.setScale(2, RoundingMode.HALF_EVEN);
         System.out.println(MessageFormat.format("Price with VAT (rounded): {0}", bdPriceWithVat));
 
-        BigDecimal bdValueWithVat = bdPriceWithVat.multiply(new BigDecimal(QUANTITY));
+        BigDecimal bdValueWithVat = bdPriceWithVat.multiply(new BigDecimal("10000"));
         System.out.println(MessageFormat.format("10,000 pcs of product with VAT: {0}", bdValueWithVat));
 
         BigDecimal bdValueWithoutVat = bdValueWithVat.divide(new BigDecimal(Double.toString(VAT_RATE)), 2, RoundingMode.HALF_EVEN);
